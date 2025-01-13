@@ -14,3 +14,6 @@ DDPM:
 - [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239)
 - [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 - [The three faces of diffusion models](https://hope7happiness.github.io/three_diff/)
+
+DDIM:
+- [Denoising Diffusion Implicit Models](https://arxiv.org/pdf/2010.02502)
