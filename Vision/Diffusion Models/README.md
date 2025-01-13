@@ -17,3 +17,6 @@ DDPM:
 
 DDIM:
 - [Denoising Diffusion Implicit Models](https://arxiv.org/pdf/2010.02502)
+
+SDE:
+- [Score-Based Generative Modeling through Stochastic Differential Equations](https://arxiv.org/pdf/2011.13456)
