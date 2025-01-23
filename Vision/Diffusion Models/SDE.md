@@ -125,3 +125,20 @@ dx=(f(x,t)-g^2(t)\nabla_x\log p_t(x|y))dt+g(t)d\tilde{w}\\
 $$
 
 where $\nabla_x\log p_t(x)$ is the score network, $p_t(y|x)$ is a time-dependent classifier network.
+
+### Classifier Guidance
+
+Using classifier $p_\phi(y|x_t)$ to guide the sampling of diffusion process, ignore math details.
+
+For DDPM (SDE-based)
+
+$$
+x_{t-1}=\mu_\theta(x_t,t)+s\Sigma_\theta(x_t,t)\nabla_{x_t}\log p_\phi(y|x_t)+\Sigma_\theta(x_t,t)z\quad z\sim\mathcal{N}(0,I)
+$$
+
+For DDIM (ODE-based)
+
+$$
+\hat{\epsilon}=\epsilon(x_t,t)-\sqrt{1-\overline{\alpha}_t}\nabla_{x_t}\log p_\phi(y|x_t)\\
+x_{t-1}=\sqrt{\overline{\alpha}_{t-1}}\frac{x_t-\sqrt{1-\overline{\alpha}_t}\epsilon_\theta(x_t,t)}{\sqrt{\overline{\alpha}_t}}+\sqrt{1-\overline{\alpha}_{t-1}}\hat{\epsilon}
+$$

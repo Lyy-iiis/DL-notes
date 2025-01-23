@@ -78,12 +78,20 @@ $$
 
 ## Diffusion models and Denoising AE
 
-To fit $\mu_\theta(x_t,t)$ into $\tilde{\mu}_t(x_t,t)$, we can use objective
+Now, we want to learn a model $p_\theta(x_{t-1}|x_t)$ to approx $p(x_{t-1}|x_t)$, a natural choice is to use KL divergence
 
 $$
-L_{t-1}=\mathbb{E}_{x_0\sim q(x_0),x_t\sim q(x_t|x_0)}\left[\|\tilde{\mu}_t(x_t,x_0)-\mu_\theta(x_t,t)\|^2\right]\\
-=\mathbb{E}_{x_0\sim q(x_0),x_t\sim \mathcal{N}(x_t;\sqrt{\overline{\alpha}_t}x_0,(1-\overline{\alpha}_t) I)}\left[\|\tilde{\mu}_t(x_t,x_0)-\mu_\theta(x_t,t)\|^2\right]
+\mathcal{L}_{t-1}=\mathbb{E}_{x_0,x_t\sim q(x_0,x_t)}\left[D_{KL}\left(q(x_{t-1}|x_t,x_0)||p_\theta(x_{t-1}|x_t)\right)\right]
 $$
+
+Since $\sigma_t$ is fixed parameter, we can rewrite the objective as
+
+$$
+L_{t-1}=\mathbb{E}_{x_0\sim q(x_0),x_t\sim q(x_t|x_0)}\left[\frac{1}{2\sigma_t^2}\|\tilde{\mu}_t(x_t,x_0)-\mu_\theta(x_t,t)\|^2\right]\\
+=\mathbb{E}_{x_0\sim q(x_0),x_t\sim \mathcal{N}(x_t;\sqrt{\overline{\alpha}_t}x_0,(1-\overline{\alpha}_t) I)}\left[\frac{1}{2\sigma_t^2}\|\tilde{\mu}_t(x_t,x_0)-\mu_\theta(x_t,t)\|^2\right]
+$$
+
+equal to fit $\mu_\theta(x_t,t)$ into $\tilde{\mu}_t(x_t,t)$, we are predicting __posterior average__.
 
 By using reparameterization trick, as well as representing $x_0$ using $x_t(x_0,\epsilon)=\sqrt{\overline{\alpha}_t}x_0+\sqrt{1-\overline{\alpha}_t}\epsilon$, we can simplify the objective
 
@@ -110,7 +118,7 @@ $$
 the corresponding loss is
 
 $$
-L_{t-1}=\mathbb{E}_{x_0\sim q(x_0),\epsilon\sim\mathcal{N}(0,I)}\left[\frac{\beta_t^2}{\alpha_t(1-\overline{\alpha}_t)}\|\epsilon_\theta(x_t(x_0,\epsilon),t)-\epsilon\|^2\right]
+L_{t-1}=\mathbb{E}_{x_0\sim q(x_0),\epsilon\sim\mathcal{N}(0,I)}\left[\frac{\beta_t^2}{2\sigma_t^2\alpha_t(1-\overline{\alpha}_t)}\|\epsilon_\theta(x_t(x_0,\epsilon),t)-\epsilon\|^2\right]
 $$
 
 hence we get our __Training__ and __Sampling__ Procedure
@@ -122,3 +130,23 @@ $$
 $$
 
 which is same to Paper's Algorithm 1 and 2.
+
+## Improved DDPM
+
+Simple modification to DDPM can improve performance, using following ways
+1. We can prove that the upper bound and lower bound of variance of $p(x_{t-1}|x_t)$ is $\beta_t$ and $\tilde{\beta}_t$ respectively. Hence, instead of setting $\Sigma_\theta(x_t,t)=\sigma_t^2 I$ with fixed $\sigma_t$, ask our model output $v$ containing one component per dimension, and 
+$$
+\Sigma_\theta(x_t,t)=\exp(v\log\beta_t+(1-v)\log\tilde{\beta}_t)
+$$
+2. To avoid too much noise, apply cosine noise schedule
+$$
+\overline{\alpha}_t=\frac{f(t)}{f(0)}\quad f(t)=\cos\left(\frac{t/T+s}{1+s}\frac{\pi}{2}\right)^2\quad \beta_t=1-\frac{\overline{\alpha}_t}{\overline{\alpha}_{t-1}}
+$$
+3. How to train $\Sigma_\theta(x_t,t)$ ? Our loss is in fact a KL divergence
+$$
+\mathcal{L}(\mu_\theta,\Sigma_\theta,t)=L_{t-1}(\theta)=\mathbb{E}_{x_0,x_t\sim q(x_0,x_t)}\left[D_{KL}\left(q(x_{t-1}|x_t,x_0)||p_\theta(x_{t-1}|x_t)\right)\right]
+$$
+        We can train $\mu_\theta$ and $\Sigma_\theta$ separately
+$$
+\mathcal{L}_{\text{hybrid}}=\sum_t \mathcal{L}(\mu_\theta,\text{stopgrad}(\Sigma_\theta),t)+\lambda\sum_t p_t\mathcal{L}(\text{stopgrad}(\mu_\theta),\Sigma_\theta,t)\quad p_t\propto\frac{1}{\sqrt{\mathbb{E}(L_{t-1}(\theta)^2)}}
+$$

@@ -7,6 +7,12 @@ Problem Formulation: Given a dataset $X = \{x_1, x_2, ..., x_N\}$, where $x_i$ i
 Usage: image generation, denoising, inpainting, super-resolution, etc.
 
 ## Reading list
+
+Diffusion Models:
+- [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585)
+- [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/pdf/2208.09392)
+- [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/pdf/2105.05233)
+
 NCSN :
 - [Generative Modeling by Estimating Gradients of the Data Distribution](https://arxiv.org/pdf/1907.05600)
 
@@ -14,6 +20,7 @@ DDPM:
 - [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239)
 - [What are Diffusion Models?](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 - [The three faces of diffusion models](https://hope7happiness.github.io/three_diff/)
+- [Improved Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2102.09672)
 
 DDIM:
 - [Denoising Diffusion Implicit Models](https://arxiv.org/pdf/2010.02502)
@@ -23,3 +30,8 @@ SDE:
 
 Consistency Models:
 - [Consistency Models](https://arxiv.org/pdf/2303.01469)
+
+__TODO__
+
+EDM:
+- [Elucidating the Design Space of Diffusion-Based Generative Models](https://arxiv.org/pdf/2206.00364)
