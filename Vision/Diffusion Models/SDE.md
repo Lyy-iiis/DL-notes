@@ -21,7 +21,7 @@ If we can use a SDE to transforms data distribution to prior distribution, then 
 
 ## Method
 
-![](fig/SDE.png)
+![](fig/SDE1.png)
 
 Diffusion process can be modeled as SDE
 
@@ -107,7 +107,15 @@ $$
 
 when $t\to\infty$, the variance of $x$ always gives unit variance when initial variance is unit variance, named Variance Preserving (VP) SDE.
 
-## Controllable Generation
+## Others
+
+### Predictor-Corrector Sampling
+
+SDE solver take one step, then use corrector like Langevin MCMC to refine the sample
+
+![](fig/SDE2.png)
+
+### Controllable Generation
 
 Given control signal $y$, our goal is to generate $x$ conditioned on $y$, the corresponding reverse-time SDE is
 
