@@ -31,6 +31,9 @@ SDE:
 Consistency Models:
 - [Consistency Models](https://arxiv.org/pdf/2303.01469)
 
+DiT:
+- [Scalable Diffusion Models with Transformers](https://arxiv.org/pdf/2212.09748)
+
 __TODO__
 
 EDM:
