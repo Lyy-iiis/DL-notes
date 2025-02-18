@@ -41,7 +41,7 @@ Algorithm:
 1. Sample $t\sim U[0,1]$, choose number of steps $M$ as samllest unit of time for approximating ODE ($M=128$ here). Possible $d\in \{1/128, 1/64, \ldots, 1\}$.
 2. When $d$ is at the smallest value, we query the model at $d=0$ instead of $s_{\theta}(x_t,t,1/128)$.
 3. Use more empirical targets than self-consistency targets. Construct a training batch by combining a ratio of $1-k$ empriical targets and $k$ self-consistency targets($k=0.25$ here).
-4. Classifier-free guidance (not clear now).
+4. Classifier-free guidance: see last section of [SDE](./SDE.md).
 5. EMA: inherent variance in diffusion model, variance at $d=0$ results in large oscillation in $d=1$. Use EMA to stabilize training.
 6. Weight decay, discrete time ($t$ is multipies of $d$).
 
