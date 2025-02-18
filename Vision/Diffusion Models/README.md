@@ -12,6 +12,7 @@ Diffusion Models:
 - [Deep Unsupervised Learning using Nonequilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585)
 - [Cold Diffusion: Inverting Arbitrary Image Transforms Without Noise](https://arxiv.org/pdf/2208.09392)
 - [Diffusion Models Beat GANs on Image Synthesis](https://arxiv.org/pdf/2105.05233)
+- [One step diffusion via Shortcut Models](https://arxiv.org/pdf/2410.12557)
 
 NCSN :
 - [Generative Modeling by Estimating Gradients of the Data Distribution](https://arxiv.org/pdf/1907.05600)
