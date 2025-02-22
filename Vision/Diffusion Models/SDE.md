@@ -59,6 +59,12 @@ $$
 
 where $dt$ is negative, $d\tilde{w}$ is Brownian motion when time flows backward.
 
+The corresponding probability flow ODE is
+
+$$
+dx=(f(x,t)-\frac{1}{2}g^2(t)\nabla_x\log p_t(x))dt
+$$
+
 __Now, our goal is to learn $\nabla_x\log p(x,t)$__, we can use score-based generative modeling to estimate it by objective
 
 $$
