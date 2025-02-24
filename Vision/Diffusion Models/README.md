@@ -36,7 +36,5 @@ Consistency Models:
 DiT:
 - [Scalable Diffusion Models with Transformers](https://arxiv.org/pdf/2212.09748)
 
-__TODO__
-
 EDM:
 - [Elucidating the Design Space of Diffusion-Based Generative Models](https://arxiv.org/pdf/2206.00364)
