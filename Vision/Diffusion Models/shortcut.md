@@ -50,3 +50,5 @@ Algorithm:
 1. One step generation SOTA
 2. Scaling law
 3. Interpolate on noise $x_0^n=nx_0^0+\sqrt{1-n^2}x_0^1$, generation display a qualitatively smooth transition
+
+Our Reproduce: [code](https://github.com/Lyy-iiis/Shortcut-model)
