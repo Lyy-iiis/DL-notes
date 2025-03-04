@@ -39,3 +39,6 @@ DiT:
 
 EDM:
 - [Elucidating the Design Space of Diffusion-Based Generative Models](https://arxiv.org/pdf/2206.00364)
+
+VDM:
+- [Video Diffusion Models](https://arxiv.org/pdf/2204.03458)
