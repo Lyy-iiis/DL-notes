@@ -61,3 +61,5 @@ $$
 \alpha^t_i(\tilde{z}^t_{<i};\tau,w)=(1+w)\alpha^t_i(\tilde{z}^t_{<i};1)-w\alpha^t_i(\tilde{z}^t_{<i};\tau)\\
 \mu^t_i(\tilde{z}_{<i}^t;\tau,w)=(1+w)\mu^t_i(\tilde{z}_{<i}^t;1)-w\mu^t_i(\tilde{z}_{<i}^t;\tau)
 $$
+
+Here is our reproduce: [code](https://github.com/Lyy-iiis/Normalizing_Flow/tree/tarflow)
