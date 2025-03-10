@@ -7,3 +7,4 @@
 - [Return of Unconditional Generation: A Self-supervised Representation Generation Method](https://arxiv.org/pdf/2312.03701)
 - [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/pdf/2010.11929)
 - [Training data-efficient image transformers & distillation through attention](https://arxiv.org/pdf/2012.12877)
+- [Energy-based Generative Adversarial Network](https://arxiv.org/pdf/1609.03126)
