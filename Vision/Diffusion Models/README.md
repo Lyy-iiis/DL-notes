@@ -42,3 +42,6 @@ EDM:
 
 VDM:
 - [Video Diffusion Models](https://arxiv.org/pdf/2204.03458)
+
+IMM:
+- [Inductive Moment Matching](https://arxiv.org/pdf/2503.07565)
