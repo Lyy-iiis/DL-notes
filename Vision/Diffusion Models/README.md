@@ -45,3 +45,6 @@ VDM:
 
 IMM:
 - [Inductive Moment Matching](https://arxiv.org/pdf/2503.07565)
+
+Applications:
+- [Learning Visual Generative Priors without Text](https://arxiv.org/pdf/2412.07767)
