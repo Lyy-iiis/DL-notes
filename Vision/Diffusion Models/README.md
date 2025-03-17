@@ -36,6 +36,8 @@ Consistency Models:
 DiT:
 - [Scalable Diffusion Models with Transformers](https://arxiv.org/pdf/2212.09748)
 - [SiT: Exploring Flow and Diffusion-based Generative Models with Scalable Interpolant Transformers](https://arxiv.org/pdf/2401.08740)
+- [Reconstruction vs. Generation:
+Taming Optimization Dilemma in Latent Diffusion Models](https://arxiv.org/pdf/2501.01423)
 
 EDM:
 - [Elucidating the Design Space of Diffusion-Based Generative Models](https://arxiv.org/pdf/2206.00364)
