@@ -8,3 +8,4 @@
 - [VICReg: Variance-Invariance-Covariance Regularization for Self-Supervised Learning](https://arxiv.org/pdf/2105.04906)
 - [Barlow Twins: Self-Supervised Learning via Redundancy Reduction](https://arxiv.org/pdf/2103.03230)
 - [USP: Unified Self-Supervised Pretraining for Image Generation and Understanding](https://arxiv.org/pdf/2503.06132)
+- [“Principal Components” Enable A New Language of Images](https://arxiv.org/pdf/2503.08685)
