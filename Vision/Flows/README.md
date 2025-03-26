@@ -11,6 +11,7 @@ Flow matching:
 
 Rectified Flow:
 - [Flow Straight and Fast: Learning to Generate and Transfer Data with Rectiﬁed Flow](https://arxiv.org/pdf/2209.03003)
+- [Scaling Rectified Flow Transformers for High-Resolution Image Synthesis](https://arxiv.org/pdf/2403.03206)
 
 Normalizing Flows:
 - [Normalizing Flow are Capable Generative Models](https://arxiv.org/pdf/2412.06329)
