@@ -48,5 +48,9 @@ VDM:
 IMM:
 - [Inductive Moment Matching](https://arxiv.org/pdf/2503.07565)
 
+GAN:
+- [Diffusion GAN: Training GAN with Diffusion](https://arxiv.org/pdf/2206.02262)
+- [Tackling the Generative Learning Trilemma with Denoising Diffusion GANs](https://arxiv.org/pdf/2112.07804)
+
 Applications:
 - [Learning Visual Generative Priors without Text](https://arxiv.org/pdf/2412.07767)

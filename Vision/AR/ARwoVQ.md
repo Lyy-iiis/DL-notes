@@ -51,3 +51,5 @@ Hence, divide $\epsilon_\theta$ by $\tau$ or scale the noise by $\tau$ works wel
 In fact, we apply autoregressive in random orders or using masked AR
 
 ![ARwoVQ](fig/ARwoVQ.png)
+
+Our reproduce code: [code](https://github.com/Lyy-iiis/mar)
