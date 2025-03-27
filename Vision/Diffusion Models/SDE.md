@@ -170,3 +170,35 @@ $$
 $$
 
 where $w$ is a hyperparameter.
+
+### Model Guidance
+
+To enhance both generation quality and alignment to conditions, we propose to take into account the posterior probability $p_\theta(y|x_t)$, i.e. joint optimizing
+
+$$
+\tilde{p}_\theta(x_t|y) = p_\theta(x_t|y) p_\theta(y|x_t)^w
+$$
+
+employ Bayesian rule to get
+$$
+% \nabla \log \tilde{p}_\theta(x_t|y) =\nabla  \log p_\theta(x_t|y) + w\nabla \log p_\theta(y|x_t)
+\nabla_{x_t}\log p_\theta(y|x_t) = \nabla_{x_t}\log p_\theta(x_t|y) - \nabla_{x_t}\log p_\theta(x_t)
+$$
+
+and we use the diffusion model to approximate the scores
+$$
+\nabla_{x_t}\log p_\theta(x_t) = -\frac{1}{\sigma_t} \epsilon_\theta(x_t,t,\emptyset)\\
+\nabla_{x_t}\log p_\theta(x_t|y) = -\frac{1}{\sigma_t} \epsilon_\theta(x_t,t,y)
+$$
+
+instead of train to predict $\epsilon$ ($\nabla_{x_t}\log p_\theta(x_t|y)$), we train to predict $\nabla_{x_t}\log \tilde{p}_\theta(x_t|y)$ jointly, i.e. our target becomes 
+$$
+\epsilon+w(\epsilon_\theta(x_t,t,c) - \epsilon_\theta(x_t,t,\emptyset))
+$$
+To stabilize the training, we use EMA model $\tilde{\epsilon}_\theta$ as target and do stop gradient
+$$
+\mathcal{L}_{mg} = \mathbb{E}_{t,(x_0,c),\epsilon} \left[ \left\| \epsilon(x_t,t,c)-\epsilon' \right\|^2 \right]\\
+\epsilon' = \epsilon + w\text{sg}(\tilde{\epsilon}_\theta(x_t,t,c) - \tilde{\epsilon}_\theta(x_t,t,\emptyset))
+$$
+
+can also apply to flow matching
