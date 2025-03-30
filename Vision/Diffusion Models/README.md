@@ -53,5 +53,8 @@ GAN:
 - [Diffusion GAN: Training GAN with Diffusion](https://arxiv.org/pdf/2206.02262)
 - [Tackling the Generative Learning Trilemma with Denoising Diffusion GANs](https://arxiv.org/pdf/2112.07804)
 
+Theory:
+- [An analytic theory of creativity in convolutional diffusion models](https://arxiv.org/pdf/2412.20292)
+
 Applications:
 - [Learning Visual Generative Priors without Text](https://arxiv.org/pdf/2412.07767)
