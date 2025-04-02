@@ -53,6 +53,9 @@ GAN:
 - [Diffusion GAN: Training GAN with Diffusion](https://arxiv.org/pdf/2206.02262)
 - [Tackling the Generative Learning Trilemma with Denoising Diffusion GANs](https://arxiv.org/pdf/2112.07804)
 
+DiffLM:
+- [Diffusion-LM Improves Controllable Text Generation](https://arxiv.org/pdf/2205.14217)
+
 Theory:
 - [An analytic theory of creativity in convolutional diffusion models](https://arxiv.org/pdf/2412.20292)
 
