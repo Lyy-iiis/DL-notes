@@ -52,6 +52,7 @@ IMM:
 GAN:
 - [Diffusion GAN: Training GAN with Diffusion](https://arxiv.org/pdf/2206.02262)
 - [Tackling the Generative Learning Trilemma with Denoising Diffusion GANs](https://arxiv.org/pdf/2112.07804)
+- [Distilling Diffusion Models into Conditional GANs](https://arxiv.org/pdf/2405.05967)
 
 DiffLM:
 - [Diffusion-LM Improves Controllable Text Generation](https://arxiv.org/pdf/2205.14217)
