@@ -53,3 +53,27 @@ $$
 $$
 
 can also apply to flow matching
+
+### Guidance-Free Guidance
+
+Our model $\epsilon_\theta^c(x_t|c)$ and target sampling model $\epsilon_\theta^s(x_t|c)$ follows
+
+$$
+\epsilon_\theta^c(x_t|c) = \frac{1}{1+w}\epsilon^s_\theta(x_t|c) + \frac{w}{1+w}\epsilon_\theta^u(x_t)
+$$
+
+Training objective is
+$$
+\min_\theta \mathbb{E}_{p(x,c),t,\epsilon} \left[ \left\| \frac{1}{1+w}\epsilon_\theta^s(x_t|c) + \frac{w}{1+w}\epsilon_\theta^u(x_t) - \epsilon\right\|^2 \right]
+$$
+
+Implementation:
+1. reparameterize $\beta=\frac{1}{1+w}$
+2. apply stop gradient on unconditioned model
+3. train with different $\beta$, add $\beta$ to conditioning of $\epsilon_\theta^s(x_t|c)$
+4. random dropout $c$ with probability $p$ during training
+$$
+\mathcal{L}_{gf} = \mathbb{E}_{p(x,c),t,\epsilon,\beta} \left[ \left\| \beta\epsilon_\theta^s(x_t|c_\empty,\beta) + (1-\beta)\text{sg}(\epsilon_\theta^u(x_t|\emptyset, 1)) - \epsilon\right\|^2 \right]
+$$
+
+**Can both train from scratch and finetune.**
