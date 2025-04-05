@@ -28,6 +28,8 @@ DDIM:
 
 SDE:
 - [Score-Based Generative Modeling through Stochastic Differential Equations](https://arxiv.org/pdf/2011.13456)
+
+Guidance:
 - [Classifier-Free Diffusion Guidance](https://arxiv.org/pdf/2207.12598)
 - [Diffusion Models without Classifier-free Guidance](https://arxiv.org/pdf/2502.12154)
 
