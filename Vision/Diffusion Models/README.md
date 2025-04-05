@@ -32,6 +32,7 @@ SDE:
 Guidance:
 - [Classifier-Free Diffusion Guidance](https://arxiv.org/pdf/2207.12598)
 - [Diffusion Models without Classifier-free Guidance](https://arxiv.org/pdf/2502.12154)
+- [Visual Generation without Guidance](https://arxiv.org/pdf/2501.15420)
 
 Consistency Models:
 - [Consistency Models](https://arxiv.org/pdf/2303.01469)
