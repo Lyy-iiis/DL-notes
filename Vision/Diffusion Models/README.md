@@ -59,6 +59,7 @@ GAN:
 
 DiffLM:
 - [Diffusion-LM Improves Controllable Text Generation](https://arxiv.org/pdf/2205.14217)
+- [Block Diffusion: Interpolating Betweeen Autoregressive and Diffusion Language Models](https://arxiv.org/pdf/2503.09573)
 
 Theory:
 - [An analytic theory of creativity in convolutional diffusion models](https://arxiv.org/pdf/2412.20292)
